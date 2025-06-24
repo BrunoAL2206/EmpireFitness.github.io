@@ -1,0 +1,116 @@
+.parent {
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.navbar {
+    grid-area: 1 / 1 / 2 / 13;
+}
+
+.titulo {
+    grid-area: 2 / 4 / 3 / 10;
+    color: #f1f1f1;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1fr;
+    font-family: Chopin-Trial-Medium;
+}
+
+.descricao {
+    grid-area: 3 / 4 / 4 / 10;
+    color: #f1f1f1;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: Chopin-Trial-Medium;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cta {
+    grid-area: 4 / 4 / 5 / 10;
+    color: #f1f1f1;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rodape {
+    grid-area: 5 / 1 / 6 / 13;
+}
+
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.backgroundTexto {
+    background: rgba(0, 0, 0, 0.5);
+    grid-area: 2 / 4 / 5 / 10;
+    border-radius: 25px;
+}
+ 
+.cssbuttons-io-button {
+  background: #a370f0;
+  color: white;
+  font-family: Chopin-Trial-Medium;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+@font-face {
+  font-family: Chopin-Trial-Medium;
+  src: url(chopin-font-family/Chopin-Trial-Medium.otf);
+}
