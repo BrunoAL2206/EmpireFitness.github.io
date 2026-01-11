@@ -1,45 +1,62 @@
 .parent {
-    position: fixed;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
-    
+
 .navbar {
-    grid-area: 1 / 1 / 2 / 13;
+  /* row-start / col-start / row-end / col-end */
+  grid-area: 1 / 1 / 2 / 13;
 }
 
 .titulo {
-    grid-area: 2 / 4 / 3 / 10;
-    color: #f1f1f1;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 1fr;
-    font-family: Chopin-Trial-Medium;
+  /* background: grey; */
+  grid-area: 2 / 3 / 3 / 7;
+  color: #f1f1f1;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 125px;
+  font-family: Chopin-Trial-Medium;
 }
 
 .descricao {
-    grid-area: 3 / 4 / 4 / 10;
-    color: #f1f1f1;
-    text-align: justify;
-    text-justify: inter-word;
-    font-family: Chopin-Trial-Medium;
-    padding-left: 20px;
-    padding-right: 20px;
+  /* background: grey; */
+  grid-area: 3 / 3 / 4 / 7;
+  color: #f1f1f1;
+  text-align: justify;
+  text-justify: inter-word;
+  vertical-align: middle;
+  font-family: Chopin-Trial-Medium;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .cta {
-    grid-area: 4 / 4 / 5 / 10;
-    color: #f1f1f1;
-    display: flex;
+  grid-area: 4 / 3 / 5 / 7;
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  grid-area: 2 / 7 / 5 / 11;
+  background: green;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .rodape {
-    grid-area: 5 / 1 / 6 / 13;
+  grid-area: 5 / 1 / 6 / 13;
+  color: #f1f1f1;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1fr;
+  font-family: Chopin-Trial-Medium;
 }
 
 .myVideo {
@@ -51,66 +68,173 @@
 }
 
 .backgroundTexto {
-    background: rgba(0, 0, 0, 0.5);
-    grid-area: 2 / 4 / 5 / 10;
-    border-radius: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  grid-area: 2 / 3 / 5 / 11;
+  border-radius: 25px;
 }
- 
-.cssbuttons-io-button {
-  background: #a370f0;
-  color: white;
-  font-family: Chopin-Trial-Medium;
-  padding: 0.35em;
-  padding-left: 1.2em;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 0.9em;
-  border: none;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
-  overflow: hidden;
+
+
+* {
+  box-sizing: border-box
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+  border-radius: 25px;
+}
+
+.imgSlider{
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
   position: relative;
-  height: 2.8em;
-  padding-right: 3.3em;
-  cursor: pointer;
-}
-
-.cssbuttons-io-button .icon {
-  background: white;
-  margin-left: 1em;
-  position: absolute;
+  margin: auto;
+  grid-area: 2 / 7 / 5 / 11;
+  /*background: green; */
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 2.2em;
-  width: 2.2em;
-  border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
-  right: 0.3em;
-  transition: all 0.3s;
+  align-items: center;
+  border-radius: 25px;
 }
 
-.cssbuttons-io-button:hover .icon {
-  width: calc(100% - 0.6em);
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-.cssbuttons-io-button .icon svg {
-  width: 1.1em;
-  transition: transform 0.3s;
-  color: #7b52b9;
+.dot_position {
+  background-color: white;
+  grid-area: 4 / 6 / 4 / 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cssbuttons-io-button:hover .icon svg {
-  transform: translateX(0.1em);
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.cssbuttons-io-button:active .icon {
-  transform: scale(0.95);
+.prev {
+  left: 0;
 }
 
-@font-face {
-  font-family: Chopin-Trial-Medium;
-  src: url(chopin-font-family/Chopin-Trial-Medium.otf);
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next, .text {
+    font-size: 11px
+  }
+}
+
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.loading {
+    -webkit-animation: fadeout 0.8s linear 1 normal forwards;
+      grid-area: 1 / 1 / 6 / 13;
+}
+
+@-webkit-keyframes fadeout{
+    from{
+       opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
